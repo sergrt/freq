@@ -4,6 +4,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <vector>
 
 constexpr auto in_file_name = "in.txt";
 constexpr auto out_file_name = "out.txt";
