@@ -23,6 +23,6 @@ private:
     void remove_tmp_files() const;
     void cleanup();
 
-    std::map<int, std::fstream, std::greater<>> tmp_streams_;
+    std::map<int, std::fstream, std::greater<int>> tmp_streams_;
     std::unordered_map<int, std::string> tmp_filenames_;
 };
