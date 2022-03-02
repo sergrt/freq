@@ -1,6 +1,6 @@
-#Simple word freq calculator
+# Simple word freq calculator
 
-###How to build
+### How to build
 ```
 $ git clone https://github.com/sergrt/freq.git
 $ cd freq
