@@ -1,6 +1,5 @@
 #include "TrieSaver.h"
 
-#include <filesystem>
 #include <fstream>
 #include <string>
 #include <vector>
@@ -29,7 +28,8 @@ void TrieSaver::save_word(const std::string& w, int freq_file_id) {
 }
 
 std::fstream& TrieSaver::get_tmp_file_stream(int freq) {
-    if (const auto i = tmp_streams_.find(freq); i != std::end(tmp_streams_)) {
+    const auto i = tmp_streams_.find(freq);
+    if (i != std::end(tmp_streams_)) {
         return i->second;
     }
 
@@ -77,6 +77,6 @@ void TrieSaver::cleanup() {
 
 void TrieSaver::remove_tmp_files() const {
     for (auto& p : tmp_filenames_) {
-        std::filesystem::remove(p.second);
+        std::remove(p.second.c_str());
     }
 }

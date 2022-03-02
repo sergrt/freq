@@ -32,7 +32,8 @@ void fill_trie_from_file(Trie& trie, const std::string& filename) {
 
         int idx = 0;
         while (idx < count) {
-            if (const auto c = static_cast<char>(tolower(buf[idx])); is_char(c)) {
+            const auto c = static_cast<char>(tolower(buf[idx]));
+            if (is_char(c)) {
                 buf_word.append(1, c);
             } else if (!buf_word.empty()) {
                 trie.insert(buf_word);
